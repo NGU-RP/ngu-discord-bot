@@ -47,53 +47,6 @@ client.on('messageCreate', message => {
   }
 });
 
-/*
-auskommentierter Bereich, der auch mehrere
-Zeilen lang sein kann
-const welcomeMessage = '**Welcome to MFPSCRIPTS!** We offer scripts for your GTA roleplaying server on FiveM. Enhance your gaming experience with high quality and unique scripts. Our scripts are of the highest quality and created by experienced developers who are committed to best programming practices. \nOur Website: https://mfpscripts.com \nOur Store: https://store.mfpscripts.com \n\n*Our Discord:* https://discord.gg/mfp';
-const newuserchannelId = 'DUBISTEINNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOB'; // ID des Channel
-
-client.on('guildMemberAdd', (member) => {
-  member.send(welcomeMessage)
-    .then(() => console.log(`🐞 Sent welcome message to ${member.user.tag}`))
-    .catch(console.error);
-    // Ende DB, Anfang Normale Nachricht Chat
-  	const newuserchannel = member.guild.channels.cache.get(newuserchannelId);
-  	if (newuserchannel) {
-    	newuserchannel.send(`**Hey new user!** \nWe welcome ${member} with us in the *Community*!`); // Erwähnen Sie den neuen Benutzer im Channel
-  	} else {
-    	console.log(`Channel with ID ${newuserchannelId} not found`);
-  	}
-});
-/////// WELCOMMER
-*/
-
-//// Welcome
-const welcomeMessage = "**Willkommen auf NGU!** Checke doch gerne ab was Dir der Discord so bietet. \nUnd besuch doch mal unsere Website: https://ngu-rp.com \n\n*Hier findest Du zum Discord zurück falls Du dich verirrst:* https://discord.gg/ngu-rp";
-
-client.on('guildMemberAdd', (member) => {
-  // Überprüfe, ob der Benutzer dem bestimmten Server (Guild) beigetreten ist
-  const targetGuildId = 'DUBISTEINNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOB'; // Ersetze dies durch die tatsächliche Guild-ID
-  if (member.guild.id !== targetGuildId) {
-    console.log(`User ${member.user.tag} joined a different guild. Ignoring.`);
-    return;
-  }
-
-  // Sende die Willkommensnachricht als private Nachricht
-  member.send(welcomeMessage)
-    .then(() => console.log(`🐞 Sent welcome message to ${member.user.tag}`))
-    .catch(console.error);
-
-  // Sende die Willkommensnachricht auch im Textchannel
-  const newuserchannelId = 'DUBISTEINNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOBNOOB'; // Ersetze dies durch die tatsächliche Channel-ID
-  const newuserchannel = member.guild.channels.cache.get(newuserchannelId);
-  if (newuserchannel) {
-    newuserchannel.send(`**Hey Du!** \nWir begrüßen ${member} bei uns in der *Community*!`);
-  } else {
-    console.log(`Channel with ID ${newuserchannelId} not found`);
-  }
-});
-
 const prefix = '!';
 
 client.on('messageCreate', message => {
